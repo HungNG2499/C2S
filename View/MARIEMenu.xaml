@@ -1,0 +1,135 @@
+﻿<Page x:Class="C2S.View.MARIEMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:viewmodel="clr-namespace:C2S.ViewModel"
+      d:DesignHeight="1080" 
+      d:DesignWidth="1920"
+      mc:Ignorable="d"
+      Title="MARIEMenu">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/C2S;component/Resources/background-2.png" 
+                        Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*" MaxHeight="200"/>
+            <RowDefinition Height="Auto" MinHeight="390" MaxHeight="723"/>
+            <RowDefinition Height="*" MinHeight="10" MaxHeight="100"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Margin="10" HorizontalAlignment="Left" 
+                       Source="/C2S;component/Resources/Logo_CRITT.png"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" MinWidth="250" MaxWidth="350"/>
+                <ColumnDefinition Width="325"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="1" Source="/C2S;component/Resources/marie-3.png" 
+                   HorizontalAlignment="Right" Margin="0"/>
+
+            <Grid Grid.Column="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MinHeight="120" MaxHeight="300"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="100"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="100"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MinHeight="40"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" FontWeight="Medium"
+                           Text="Le grand défi" Foreground="{Binding MenuColor4}" FontSize="20" 
+                           FontFamily="{StaticResource Oswald}"/>
+                <TextBlock Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" FontWeight="Medium"
+                           Text="  Marie-Amélie" Foreground="{Binding MenuColor4}" FontSize="40" 
+                           FontFamily="{StaticResource Oswald}"/>
+                <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" FontWeight="Medium"
+                               Text="  Le Fur" Foreground="{Binding MenuColor4}" FontSize="40" 
+                           FontFamily="{StaticResource Oswald}"/>
+
+                <Button Grid.Row="4" Style="{StaticResource MenuButton}" Command="{Binding VirtualAppCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/virtuelle.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Application Virtuelle" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="6" Style="{StaticResource MenuButton}" Command="{Binding TutorialCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/tutoriel.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Les tutoriels" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="8" Style="{StaticResource MenuButton}" Command="{Binding DataCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/donnees.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Les données" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+            </Grid>
+
+            <Rectangle Grid.Column="3" Fill="Gray" Margin="10 0 9 0"/>
+
+            <TextBlock Grid.Column="4" FontSize="20" TextAlignment="Justify" Foreground="White" TextWrapping="Wrap" Margin="10 -50"
+                       VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Run>Marie-Amélie Le Fur est une athlète handisport française née le 26 septembre</Run>
+                <Run>1988 à Vendôme (Loir-et-Cher).</Run>
+                <LineBreak />
+                <LineBreak />
+                <Run>Athlète handisport, elle est détentrice de neuf médailles lors des Jeux</Run>
+                <Run>paralympiques : Deux médailles d'argent lors de l'édition de Pékin, trois</Run>
+                <Run>médailles lors de l'édition de Londres, trois médailles, dont deux en or lors de</Run>
+                <Run>l'édition de Rio et une médaille d'argent lors de l'édition de Tokyo. Son</Run>
+                <Run>palmarès se complète également par douze médailles mondiales, dont quatre titres</Run>
+                <Run>de championne. Elle est élue en décembre 2018 présidente du Comité paralympique</Run>
+                <Run>et sportif français.</Run>
+            </TextBlock>
+        </Grid>
+
+        <Button Grid.Row="4" Style="{StaticResource MenuButton}" Command="{Binding ReturnCommand}" 
+                HorizontalAlignment="Left" Margin="60 0 0 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="210"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE72B;"/>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Retour" Margin="10 0 0 0"/>
+            </Grid>
+        </Button>
+    </Grid>
+</Page>

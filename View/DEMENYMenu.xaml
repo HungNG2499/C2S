@@ -1,0 +1,176 @@
+﻿<Page x:Class="C2S.View.DEMENYMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:viewmodel="clr-namespace:C2S.ViewModel"
+      d:DesignHeight="1080" 
+      d:DesignWidth="1920"
+      mc:Ignorable="d"
+      Title="DEMENYMenu">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/C2S;component/Resources/background-2.png" 
+                        Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*" MaxHeight="200"/>
+            <RowDefinition Height="Auto" MinHeight="390" MaxHeight="723"/>
+            <RowDefinition Height="*" MinHeight="10" MaxHeight="100"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Margin="10" HorizontalAlignment="Left" 
+                       Source="/C2S;component/Resources/Logo_CRITT.png"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" MinWidth="250" MaxWidth="350"/>
+                <ColumnDefinition Width="325"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="1" Source="/C2S;component/Resources/demeny-3.png" 
+                   HorizontalAlignment="Right" Margin="0"/>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="*" MinHeight="10" MaxHeight="90"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Left" 
+                           Text="Sur les pas des précurseurs" Foreground="{Binding MenuColor3}" FontSize="20" 
+                           FontFamily="{StaticResource Oswald}"/>
+                <TextBlock Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Left" 
+                           Text="  Demenÿ et Marey" Foreground="{Binding MenuColor3}" FontSize="40"
+                           FontFamily="{StaticResource Oswald}"/>
+
+                <Button Grid.Row="3" Style="{StaticResource MenuButton}" Command="{Binding VirtualApp1Command}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="420"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/virtuelle.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Application Moderne" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="5" Style="{StaticResource MenuButton}" Command="{Binding VirtualApp2Command}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="420"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/virtuelle.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Application Historique" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="7" Style="{StaticResource MenuButton}" Command="{Binding SoftwareCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="420"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/logiciels.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Les logiciels" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="9" Style="{StaticResource MenuButton}" Command="{Binding NotebookCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="420"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/cahier.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Le cahier" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="11" Style="{StaticResource MenuButton}" Command="{Binding TutorialCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="420"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/tutoriel.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Les tutoriels" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="13" Style="{StaticResource MenuButton}" Command="{Binding DataCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="420"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/donnees.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Les données" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+            </Grid>
+
+            <Rectangle Grid.Column="3" Fill="Gray" Margin="10 0 9 0"/>
+
+            <TextBlock Grid.Column="4" FontSize="20" TextAlignment="Justify" Foreground="White" TextWrapping="Wrap" Margin="10 -50"
+                       VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Run>Étienne Jules Marey (France, Beaune, 5 mars 1830 - Paris, 21 mai 1904) était un</Run>
+                <Run>docteur, photographe et chercheur français, il s'est démarqué par ses recherches </Run>
+                <Run>dans l'étude photographique du mouvement.</Run>
+                <LineBreak />
+                <LineBreak />
+                <Run>Georges Demenÿ (Douai, 1850 - Paris, 26 décembre 1917) était un inventeur,</Run>
+                <Run>cinéaste et gymnaste français.</Run>
+                <LineBreak />
+                <LineBreak />
+                <Run>En 1874, ensemble, ils ont établi un programme de recherche qui conduira à la </Run>
+                <Run>création de la "Station physiologique", qui a été ouverte en 1882 dans le Bois </Run>
+                <Run>de Boulogne. Demenÿ y était l'assistant de Marey, et les deux chercheurs ont </Run>
+                <Run>produit un travail considérable, photographiant le mouvement humain et animal, </Run>
+                <Run>en utilisant la photographie en accéléré, c'est-à-dire chronophotographie.</Run>
+            </TextBlock>
+        </Grid>
+
+        <Button Grid.Row="4" Style="{StaticResource MenuButton}" Command="{Binding ReturnCommand}" 
+                HorizontalAlignment="Left" Margin="60 0 0 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="210"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE72B;"/>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Retour" Margin="10 0 0 0"/>
+            </Grid>
+        </Button>
+    </Grid>
+</Page>

@@ -1,0 +1,163 @@
+﻿<Page x:Class="C2S.View.USAINMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:viewmodel="clr-namespace:C2S.ViewModel"
+      d:DesignHeight="1080" 
+      d:DesignWidth="1920"
+      mc:Ignorable="d"
+      Title="USAINMenu">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/C2S;component/Resources/background-2.png" 
+                        Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*" MaxHeight="200"/>
+            <RowDefinition Height="Auto" MinHeight="390" MaxHeight="723"/>
+            <RowDefinition Height="*" MinHeight="10" MaxHeight="100"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Margin="10" HorizontalAlignment="Left" 
+                       Source="/C2S;component/Resources/Logo_CRITT.png"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" MinWidth="250" MaxWidth="350"/>
+                <ColumnDefinition Width="325"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="1" Source="/C2S;component/Resources/usain-3.png" 
+                   HorizontalAlignment="Right" Margin="0"/>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MinHeight="40" MaxHeight="100"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" MaxHeight="30"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Left" 
+                           Text="La course de l'éclair" Foreground="{Binding MenuColor2}" FontSize="20" 
+                           FontFamily="{StaticResource Oswald}"/>
+                <TextBlock Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Left" 
+                           Text="  Usain Bolt" Foreground="{Binding MenuColor2}" FontSize="40"
+                           FontFamily="{StaticResource Oswald}"/>
+
+                <Button Grid.Row="3" Style="{StaticResource MenuButton}" Command="{Binding VirtualAppCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/virtuelle.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Application Virtuelle" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="5" Style="{StaticResource MenuButton}" Command="{Binding SoftwareCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/logiciels.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Les logiciels" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="7" Style="{StaticResource MenuButton}" Command="{Binding NotebookCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/cahier.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Le cahier" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="9" Style="{StaticResource MenuButton}" Command="{Binding TutorialCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/tutoriel.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Les tutoriels" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Row="11" Style="{StaticResource MenuButton}" Command="{Binding DataCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="320"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/C2S;component/Resources/donnees.png" Height="25" Width="25"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Les données" Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+
+            </Grid>
+
+            <Rectangle Grid.Column="3" Fill="Gray"  Margin="10 0 9 0"/>
+
+            <TextBlock Grid.Column="4" FontSize="20" TextAlignment="Justify" Foreground="White" TextWrapping="Wrap" Margin="10 -50"
+                       VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Run>Usain Bolt, né le 21 août 1986 dans la paroisse de Trelawny, est un athlète</Run>
+                <Run>jamaïcain, spécialiste des épreuves de sprint, généralement considéré comme le</Run>
+                <Run>plus grand sprinter de tous les temps.</Run>
+                <LineBreak />
+                <LineBreak />
+                <Run>Parmi les athlètes les plus titrés de l'histoire des jeux olympiques en sprint </Run>
+                <Run>avec huit médailles d'or, il est le plus titré de l'histoire des championnats du </Run>
+                <Run>monde avec onze victoires. Il est le premier athlète à détenir simultanément les</Run>
+                <Run>records du monde du 100 m, 200 m et 4 x 100 m, le seul athlète à avoir conservé </Run>
+                <Run>deux titres individuels en sprint sur trois olympiades consécutives, et le seul </Run>
+                <Run>à avoir battu trois records du monde lors d'une même olympiade. Des jeux </Run>
+                <Run>olympique de 2008 aux jeux olympiques de 2016, Usain Bolt a gagné dix-neuf </Run>
+                <Run>titres olympiques et mondiaux sur vingt-et-une épreuves disputées.</Run>
+            </TextBlock>
+        </Grid>
+
+        <Button Grid.Row="4" Style="{StaticResource MenuButton}" Command="{Binding ReturnCommand}" 
+                HorizontalAlignment="Left" Margin="60 0 0 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="210"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE72B;" Width="25" Height="25"/>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Retour" Margin="10 0 0 0"/>
+            </Grid>
+        </Button>
+
+    </Grid>
+</Page>

@@ -1,0 +1,74 @@
+﻿<Page x:Class="C2S.View.BOBVirApp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:C2S.View"
+      d:DesignHeight="1080" 
+      d:DesignWidth="1920"
+      mc:Ignorable="d"
+      Title="BOBVirApp">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/C2S;component/Resources/background-2.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="404" MaxHeight="723"/>
+            <RowDefinition Height="*" MinHeight="10" MaxHeight="100"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Margin="10" HorizontalAlignment="Left" 
+                       Source="/C2S;component/Resources/Logo_CRITT.png"/>
+
+            <TextBlock Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" TextAlignment="Left" 
+                       Text="Le saut du XXème Siècle" Foreground="{Binding MenuColor1}" Margin="20" 
+                       FontSize="20" FontFamily="{StaticResource Oswald}"/>
+
+            <TextBlock Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextAlignment="Left" 
+                       FontWeight="Medium" Text="Bob Beamon" Foreground="{Binding MenuColor1}" 
+                       Margin="0 20 20 14" FontSize="40" FontFamily="{StaticResource Oswald}"/>
+
+            <Grid Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="35" 
+                                   FontFamily="Segoe MDL2 Assets" Text="&#xE738;" Margin="10 0 10 14" Foreground="White"/>
+                <TextBlock Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+                                   FontSize="26" FontFamily="{StaticResource Exo}" Text="L'application virtuelle" 
+                                   Margin="20" Foreground="White"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Button HorizontalAlignment="Left" Style="{StaticResource MenuButton}" Command="{Binding ExitApplicationCommand}" Margin="60 0 0 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE72B;" Width="25" Height="25"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Quitter l'application" Margin="10 0 0 0"/>
+                </Grid>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

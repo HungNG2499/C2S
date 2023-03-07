@@ -1,0 +1,234 @@
+﻿<Page x:Class="C2S.View.Accueil"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:C2S.View"
+      xmlns:viewmodel="clr-namespace:C2S.ViewModel"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance Type=viewmodel:HomeVM}"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
+      Title="Accueil">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/C2S;component/Resources/background-2.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden" PanningMode="Both"
+                      CanContentScroll="True" Width="Auto" Margin="-350 0 0 0" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="360"/>
+                    <ColumnDefinition MinWidth="250" MaxWidth="357"/>
+                    <ColumnDefinition MinWidth="250" MaxWidth="357"/>
+                    <ColumnDefinition MinWidth="250" MaxWidth="357"/>
+                    <ColumnDefinition MinWidth="250" MaxWidth="357"/>
+                    <ColumnDefinition MinWidth="100" Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="1" Style="{StaticResource MenuButton}" MouseEnter="Button1_MouseEnter" 
+                        MouseLeave="Button1_MouseLeave" Command="{Binding CommandMenu1}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition MinHeight="400" Height="*"/>
+                            <RowDefinition Height="0"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="1" Source="/C2S;component/Resources/bob-1.png" MaxHeight="723"
+                               Margin="-50 10 -50 40" Visibility="{Binding SelectedMenu1}"/>
+                        <Image Grid.Row="1" Source="/C2S;component/Resources/bob-3.png" MaxHeight="723"
+                               Margin="-50 10 -50 40" Visibility="{Binding UnselectedMenu1}"/>
+
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextAlignment="Left" 
+                               Text="Le saut du" Foreground="{Binding MenuColor1}" Margin="0 0 0 -40" FontSize="20" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextAlignment="Left" 
+                               Text="XXème Siècle" Foreground="{Binding MenuColor1}" Margin="20 0 0 -65" FontSize="20" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Medium"
+                               Text="Bob" Foreground="{Binding MenuColor1}" Margin="0 -155 -30 0" FontSize="30" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Medium"
+                               Text="Beamon" Foreground="{Binding MenuColor1}" Margin="0 -125 -30 0" FontSize="30" FontFamily="{StaticResource Oswald}"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Column="2" Style="{StaticResource MenuButton}" MouseEnter="Button2_MouseEnter"
+                        MouseLeave="Button2_MouseLeave" Command="{Binding CommandMenu2}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition MinHeight="400" Height="*"/>
+                            <RowDefinition Height="0"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="1" Source="/C2S;component/Resources/usain-1.png" MaxHeight="723"
+                               Margin="-50 70 -70 -15" Visibility="{Binding SelectedMenu2}"/>
+                        <Image Grid.Row="1" Source="/C2S;component/Resources/usain-3.png" MaxHeight="723"
+                               Margin="-50 70 -70 -15" Visibility="{Binding UnselectedMenu2}"/>
+
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextAlignment="Left" 
+                               Text="La course" Foreground="{Binding MenuColor2}" Margin="0 0 0 -100" FontSize="20" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextAlignment="Left" 
+                               Text="de l'éclair" Foreground="{Binding MenuColor2}" Margin="20 0 0 -125" FontSize="20" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Medium"
+                               Text="Usain" Foreground="{Binding MenuColor2}" Margin="0 -102 -50 0" FontSize="30" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Medium"
+                               Text="Bolt" Foreground="{Binding MenuColor2}" Margin="0 -70 -50 0" FontSize="30" FontFamily="{StaticResource Oswald}"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Column="3" Style="{StaticResource MenuButton}" MouseEnter="Button3_MouseEnter"
+                        MouseLeave="Button3_MouseLeave" Command="{Binding CommandMenu3}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition MinHeight="400" Height="*"/>
+                            <RowDefinition Height="0"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="1" Source="/C2S;component/Resources/demeny-1.png" MaxHeight="723"
+                               Margin="-50 10 -50 40" Visibility="{Binding SelectedMenu3}"/>
+                        <Image Grid.Row="1" Source="/C2S;component/Resources/demeny-3.png" MaxHeight="723"
+                               Margin="-50 10 -50 40" Visibility="{Binding UnselectedMenu3}"/>
+
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextAlignment="Left" 
+                               Text="Sur les pas" Foreground="{Binding MenuColor3}" Margin="0 0 0 -40" FontSize="20" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextAlignment="Left" 
+                               Text="des précurseurs" Foreground="{Binding MenuColor3}" Margin="20 0 0 -65" FontSize="20" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Medium"
+                               Text="Demenÿ" Foreground="{Binding MenuColor3}" Margin="0 -152 -40 0" FontSize="30" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Medium"
+                               Text="et Marey" Foreground="{Binding MenuColor3}" Margin="0 -125 -38 0" FontSize="30" FontFamily="{StaticResource Oswald}"/>
+                    </Grid>
+                </Button>
+
+                <Button Grid.Column="4" Style="{StaticResource MenuButton}" MouseEnter="Button4_MouseEnter"
+                        MouseLeave="Button4_MouseLeave" Command="{Binding CommandMenu4}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition MinHeight="400" Height="*"/>
+                            <RowDefinition Height="0"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="1" Source="/C2S;component/Resources/marie-1.png" MaxHeight="723" 
+                               Margin="-50 70 -70 -15" Visibility="{Binding SelectedMenu4}"/>
+                        <Image Grid.Row="1" Source="/C2S;component/Resources/marie-3.png" MaxHeight="723" 
+                               Margin="-50 70 -70 -15" Visibility="{Binding UnselectedMenu4}"/>
+
+                        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextAlignment="Left" 
+                               Text="Le grand défi" Foreground="{Binding MenuColor4}" Margin="0 0 0 -100" FontSize="20" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Medium"
+                               Text="Marie-Amélie" Foreground="{Binding MenuColor4}" Margin="0 -102 -50 0" FontSize="30" FontFamily="{StaticResource Oswald}"/>
+
+                        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Right" FontWeight="Medium"
+                               Text="Le Fur" Foreground="{Binding MenuColor4}" Margin="0 -70 -50 0" FontSize="30" FontFamily="{StaticResource Oswald}"/>
+                    </Grid>
+                </Button>
+            </Grid>
+        </ScrollViewer>
+
+        <Grid Grid.Column="0">
+
+            <Grid.Background>
+                <ImageBrush ImageSource="/C2S;component/Resources/background-2-menu.png" Stretch="UniformToFill" AlignmentX="Left"/>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*" MinHeight="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*" MaxHeight="30"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*" MaxHeight="30"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*" MaxHeight="30"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*" MaxHeight="30"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition MinHeight="20" Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Margin="10" HorizontalAlignment="Left" 
+                       Source="/C2S;component/Resources/Logo_C2S-small.png"/>
+
+            <Button Grid.Row="2" Style="{StaticResource MenuButton}" Command="{Binding SiteCommand}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="210"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE80F;"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Le site" Margin="10 0 0 5"/>
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="4" Style="{StaticResource MenuButton}" Command="{Binding TutorialsCommand}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="210"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xEF3B;"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Tutoriels" Margin="10 0 0 5"/>
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="6" Style="{StaticResource MenuButton}" Command="{Binding ClassesCommand}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="210"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE716;"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Classes sciences et sport ?" Margin="10 0 0 5" TextWrapping="Wrap"/>
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="8" Style="{StaticResource MenuButton}" Command="{Binding ContactCommand}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="210"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE724;"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Nous contacter" Margin="10 0 0 5"/>
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="10" Style="{StaticResource MenuButton}" Command="{Binding ExitCommand}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="210"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xF3B1;"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Quitter" Margin="10 0 0 5"/>
+                </Grid>
+            </Button>
+
+        </Grid>
+    </Grid>
+</Page>
