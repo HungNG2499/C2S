@@ -21,6 +21,7 @@ namespace C2S.View
         {
             if (e.IsSuccess)
             {
+                //edit to test GitHub
                 webView.CoreWebView2.Navigate("https://cp2s.sciencesetsport.fr/cahiers-pedagogiques/");              
             }
         }
